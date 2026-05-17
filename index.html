@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHM GmbH | Installationen in Klagenfurt</title>
+  <meta name="description" content="Ihr zuverlässiger Installateur in Klagenfurt am Wörthersee. Heizung, Sanitär, Lüftung – Alles aus einer Hand.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Colors */
+      --color-bg: #F8F9FA;
+      --color-surface: #FFFFFF;
+      --color-text: #1A2530;
+      --color-text-muted: #5C6B7A;
+      --color-accent: #0056B3;
+      --color-accent-light: #e6f0fa;
+      --color-highlight: #E25D30;
+      --color-dark: #0f1720;
+      
+      /* Typography */
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --text-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 1.8vw, 1rem);
+      --text-base: clamp(1rem, 2vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 2.5vw, 1.375rem);
+      --text-xl: clamp(1.375rem, 3vw, 1.75rem);
+      --text-2xl: clamp(1.75rem, 4vw, 2.5rem);
+      --text-3xl: clamp(2.25rem, 5vw, 3.5rem);
+      --text-4xl: clamp(3rem, 7vw, 4.5rem);
+      
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+      
+      --section-padding: clamp(4rem, 10vw, 8rem);
+      --container-px: clamp(1.5rem, 5vw, 3rem);
+      
+      /* Z-Index */
+      --z-base: 0;
+      --z-raised: 10;
+      --z-dropdown: 100;
+      --z-sticky: 200;
+      --z-overlay: 500;
+      --z-modal: 1000;
+      --z-toast: 2000;
+      --z-max: 9000;
+    }
+
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 100%;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+
+    h1 { font-size: var(--text-4xl); }
+    h2 { font-size: var(--text-3xl); }
+    h3 { font-size: var(--text-2xl); }
+    
+    p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 65ch;
+    }
+
+    .text-lead {
+      font-size: var(--text-lg);
+      color: var(--color-text);
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--container-px);
+    }
+
+    .section {
+      padding: var(--section-padding) 0;
+    }
+
+    /* Icons */
+    [data-lucide] {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .icon-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      font-family: var(--font-heading);
+      letter-spacing: 0.02em;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: var(--z-raised);
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background-color: var(--color-accent);
+      color: var(--color-surface);
+    }
+
+    .btn-primary:hover {
+      background-color: #004494;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-text);
+      border: 1px solid var(--color-text-muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-text);
+      background-color: var(--color-surface);
+    }
+
+    /* Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--color-accent);
+      color: white;
+      padding: 1rem;
+      z-index: var(--z-max);
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      background: rgba(248, 249, 250, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(26, 37, 48, 0.05);
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: 0.05em;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent);
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    /* Mobile Menu Toggle */
+    .nav-toggle {
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1002;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-text);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile Overlay */
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-nav-links a {
+      font-size: var(--text-2xl);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--color-text);
+      padding: 1rem 0;
+    }
+
+    @media (min-width: 769px) {
+      .nav-toggle { display: none; pointer-events: none; }
+      .desktop-nav { display: block; }
+      .header-cta { display: block; }
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding-top: 80px; /* offset header */
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+      }
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      padding: var(--space-8) 0;
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(26, 37, 48, 0.08);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-visual {
+        height: 600px;
+      }
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: var(--space-8);
+      left: calc(var(--space-8) * -1);
+      background: var(--color-surface);
+      padding: var(--space-4) var(--space-6);
+      border-radius: 4px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+      border-left: 4px solid var(--color-accent);
+      z-index: 2;
+    }
+    
+    @media (max-width: 1023px) {
+      .hero-badge {
+        left: var(--space-4);
+        bottom: var(--space-4);
+      }
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+
+    .hero-badge span {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+    }
+
+    .service-card {
+      background: var(--color-surface);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(26, 37, 48, 0.03);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(26, 37, 48, 0.08);
+    }
+
+    .service-img-wrap {
+      height: 240px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .service-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .service-content {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-content h3 {
+      margin-bottom: var(--space-3);
+    }
+
+    .service-content p {
+      margin-bottom: var(--space-6);
+      font-size: var(--text-sm);
+      flex-grow: 1;
+    }
+
+    .service-link {
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    /* About Section */
+    .about-section {
+      background-color: var(--color-surface);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr 1.2fr;
+        gap: var(--space-16);
+      }
+    }
+
+    .about-text {
+      padding-right: var(--space-8);
+    }
+
+    .about-text h2 {
+      margin-bottom: var(--space-6);
+    }
+
+    .about-text p {
+      margin-bottom: var(--space-4);
+    }
+
+    .about-feature-list {
+      margin-top: var(--space-8);
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+
+    .about-feature i {
+      color: var(--color-accent);
+      margin-top: 2px;
+    }
+
+    .about-visual {
+      background: var(--color-bg);
+      padding: var(--space-12);
+      border-radius: 8px;
+      border-left: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .stat-block {
+      margin-bottom: var(--space-8);
+    }
+    .stat-block:last-child { margin-bottom: 0; }
+    
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+    .stat-label {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Aktionen (Promotions) */
+    .aktionen-section {
+      background-color: var(--color-dark);
+      color: var(--color-surface);
+    }
+
+    .aktionen-section h2 {
+      color: var(--color-surface);
+    }
+
+    .aktionen-section p {
+      color: #a0aec0;
+    }
+
+    .aktionen-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+
+    @media (min-width: 768px) {
+      .aktionen-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .aktion-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .aktion-tag {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      background: var(--color-highlight);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .aktion-brand {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      opacity: 0.2;
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      pointer-events: none;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
+    
+    .contact-item i {
+      color: var(--color-accent);
+      margin-top: 4px;
+    }
+
+    .contact-item h4 {
+      font-size: var(--text-base);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item p {
+      font-size: var(--text-sm);
+      margin: 0;
+    }
+
+    /* Map Placeholder */
+    .map-placeholder {
+      background: var(--color-surface);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 0;
+    }
+
+    .map-placeholder > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .map-placeholder i {
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+      width: 32px;
+      height: 32px;
+    }
+
+    .map-placeholder p {
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-6);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--color-dark);
+      color: var(--color-surface);
+      padding: clamp(4rem, 8vw, 7rem) 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+      margin-bottom: var(--space-12);
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1.5fr;
+      }
+    }
+
+    .footer-brand h3 {
+      font-size: var(--text-xl);
+      color: var(--color-surface);
+      margin-bottom: var(--space-4);
+    }
+
+    .footer-brand p {
+      color: #a0aec0;
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-6);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--space-4);
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      color: var(--color-surface);
+      transition: background 0.2s;
+    }
+
+    .social-links a:hover {
+      background: var(--color-accent);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      color: var(--color-surface);
+      margin-bottom: var(--space-6);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .footer-links button,
+    .footer-links a {
+      color: #a0aec0;
+      font-size: var(--text-sm);
+      text-align: left;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links button:hover,
+    .footer-links a:hover {
+      color: var(--color-surface);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-bottom p {
+      color: #a0aec0;
+      font-size: var(--text-xs);
+      margin: 0;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-modal);
+      background: rgba(15, 23, 32, 0.8);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--color-surface);
+      width: 100%;
+      max-width: 480px;
+      border-radius: 8px;
+      padding: var(--space-8);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.is-active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      color: var(--color-text-muted);
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    .modal-title {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-4);
+      padding-right: var(--space-8);
+    }
+
+    .modal-body {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .modal-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+    
+    .modal-links a {
+      color: var(--color-accent);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: var(--space-4);
+      left: var(--space-4);
+      right: var(--space-4);
+      z-index: var(--z-toast);
+      background: var(--color-surface);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: var(--space-6);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transform: translateY(150%);
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @media (min-width: 768px) {
+      .cookie-banner {
+        max-width: 420px;
+        left: auto;
+      }
+    }
+
+    .cookie-banner.is-visible {
+      transform: translateY(0);
+    }
+
+    .cookie-banner p {
+      font-size: var(--text-sm);
+      margin: 0;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .cookie-actions button {
+      flex: 1;
+      padding: 0.5rem 1rem;
+      font-size: var(--text-xs);
+    }
+  </style>
+</head>
+<body>
+<!-- DEMO NOTICE BANNER - benedictjaros.com -->
+<style>
+#__demo_spacer{display:block;}
+#__demo_notice,#__demo_notice *{box-sizing:border-box;margin:0;padding:0;}
+#__demo_notice{
+  position:fixed;top:0;left:0;right:0;z-index:99999;
+  background:rgba(9,9,11,.97);
+  backdrop-filter:blur(14px) saturate(160%);
+  -webkit-backdrop-filter:blur(14px) saturate(160%);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+#__demo_inner{
+  max-width:1280px;margin:0 auto;
+  padding:0 44px 0 18px;min-height:38px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+#__demo_dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:#f5c842;box-shadow:0 0 7px rgba(245,200,66,.55);}
+#__demo_label{color:#f5c842;font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;flex-shrink:0;}
+#__demo_divider{color:rgba(255,255,255,.15);font-size:12px;flex-shrink:0;}
+#__demo_text{color:rgba(255,255,255,.45);font-size:11.5px;line-height:1.45;flex:1 1 160px;}
+#__demo_links{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+#__demo_links a{
+  color:rgba(255,255,255,.38);font-size:11px;text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.14);
+  transition:color .15s,border-color .15s;white-space:nowrap;
+}
+#__demo_links a:hover{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.4);}
+#__demo_link_sep{color:rgba(255,255,255,.15);font-size:10px;}
+#__demo_close{
+  position:absolute;right:0;top:0;bottom:0;width:40px;
+  background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,.28);font-size:16px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:color .15s;
+}
+#__demo_close:hover{color:rgba(255,255,255,.7);}
+@media(max-width:560px){
+  #__demo_inner{padding:7px 44px 7px 14px;gap:6px;}
+  #__demo_text{font-size:11px;flex:1 1 100%;order:3;}
+  #__demo_dot,#__demo_label{order:1;}
+  #__demo_divider{order:2;}
+  #__demo_links{order:4;}
+}
+</style>
+<div id="__demo_spacer"></div>
+<div id="__demo_notice" role="banner" aria-label="Demo notice">
+  <div id="__demo_inner">
+    <span id="__demo_dot"></span>
+    <span id="__demo_label">Demo</span>
+    <span id="__demo_divider">/</span>
+    <span id="__demo_text">Unofficial remake &mdash; not the real website. All content &amp; trademarks belong to their owners.</span>
+    <div id="__demo_links">
+      <a href="https://benedictjaros.com/impressum" target="_blank" rel="noopener noreferrer">Impressum</a>
+      <span id="__demo_link_sep">&middot;</span>
+      <a href="https://benedictjaros.com/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+    </div>
+  </div>
+  <button id="__demo_close" aria-label="Close demo notice">&#x2715;</button>
+</div>
+<script>
+(function () {
+  var spacer = document.getElementById('__demo_spacer');
+  var b = document.getElementById('__demo_notice');
+  var x = document.getElementById('__demo_close');
+  if (!b || !spacer) return;
+  function sync() { spacer.style.height = b.offsetHeight + 'px'; }
+  function hide() {
+    b.style.display = 'none'; spacer.style.height = '0';
+    try { sessionStorage.setItem('__demo_closed', '1'); } catch (e) {}
+  }
+  try { if (sessionStorage.getItem('__demo_closed')) { b.style.display = 'none'; spacer.style.height = '0'; return; } } catch (e) {}
+  sync();
+  window.addEventListener('resize', function () { if (b.style.display !== 'none') sync(); });
+  if (x) x.addEventListener('click', hide);
+}());
+</script>
+
+
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">SHM</a>
+      
+      <nav class="desktop-nav" aria-label="Hauptnavigation">
+        <ul class="nav-links">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#aktionen">Aktionen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <button class="btn btn-primary btn-trigger" data-modal="contact-modal">
+          <span class="icon-text"><i data-lucide="phone"></i> Jetzt anrufen</span>
+        </button>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-label="Menü öffnen" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay">
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="#leistungen" class="mobile-link">Leistungen</a></li>
+        <li><a href="#ueber-uns" class="mobile-link">Über uns</a></li>
+        <li><a href="#aktionen" class="mobile-link">Aktionen</a></li>
+        <li><a href="#kontakt" class="mobile-link">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    
+    <!-- Hero Section -->
+    <section class="hero container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>SHM GmbH Installationen in Klagenfurt am Wörthersee</h1>
+          <p class="text-lead">Wir heißen Sie herzlich willkommen bei der SHM GmbH. Ihr Partner für präzise, zuverlässige und langlebige Haustechnik in Kärnten.</p>
+          <div>
+            <button class="btn btn-primary btn-trigger" data-modal="consult-modal">
+              <span class="icon-text">Kostenlose Erstberatung <i data-lucide="arrow-right"></i></span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual reveal" style="--i:1">
+          <img src="https://www.shm-heizungsanitaer.at/uploads/Wsj9qQwC/640x0_320x0/teaser_sani.jpg" alt="Modernes Badezimmer und Sanitärinstallation">
+          <div class="hero-badge">
+            <strong>35 Jahre</strong>
+            <span>Erfahrung & Kompetenz</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="leistungen" class="section container">
+      <div class="reveal">
+        <h2>Unsere Leistungen</h2>
+        <p>Präzisionsarbeit für Ihr Zuhause. Von der Planung bis zur finalen Umsetzung.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card reveal" style="--i:0">
+          <div class="service-img-wrap">
+            <img src="https://www.shm-heizungsanitaer.at/uploads/3lKM4axz/600x0_320x0/teaser1.jpg" alt="Moderne Heizungsanlage" loading="lazy">
+          </div>
+          <div class="service-content">
+            <h3>Heizung</h3>
+            <p>Ob Fußbodenheizung, Pelletofen oder Wärmepumpe – wir finden die effizienteste und nachhaltigste Lösung für Ihre Räumlichkeiten.</p>
+            <button class="service-link btn-trigger" data-modal="service-modal">
+              <span class="icon-text">Mehr erfahren <i data-lucide="arrow-right"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal" style="--i:1">
+          <div class="service-img-wrap">
+            <img src="https://www.shm-heizungsanitaer.at/uploads/Wsj9qQwC/640x0_320x0/teaser_sani.jpg" alt="Modernes Badezimmer" loading="lazy">
+          </div>
+          <div class="service-content">
+            <h3>Sanitär</h3>
+            <p>Lassen Sie Ihr Badezimmer bzw. Ihren Sanitärbereich in eine Wohlfühloase verwandeln. Barrierefrei, modern und formvollendet.</p>
+            <button class="service-link btn-trigger" data-modal="service-modal">
+              <span class="icon-text">Mehr erfahren <i data-lucide="arrow-right"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal" style="--i:2">
+          <div class="service-img-wrap">
+            <img src="https://www.shm-heizungsanitaer.at/uploads/0BqD7WUx/600x0_320x0/teaser2.jpg" alt="Lüftungssystem Installation" loading="lazy">
+          </div>
+          <div class="service-content">
+            <h3>Lüftung</h3>
+            <p>Mit unseren Lüftungssystemen mit Wärmerückgewinnung sorgen wir für ein optimales Raumklima und senken Ihre Energiekosten.</p>
+            <button class="service-link btn-trigger" data-modal="service-modal">
+              <span class="icon-text">Mehr erfahren <i data-lucide="arrow-right"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="ueber-uns" class="section about-section">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <h2>Ihr zuverlässiger Installateur</h2>
+          <p class="text-lead">Unser Unternehmen besteht bereits seit mehr als 35 Jahren. Wir stehen für handwerkliche Perfektion und absolute Verlässlichkeit in Kärnten.</p>
+          <p>Wir begleiten Sie von der ersten Idee bis zur fertigen Installation. Keine versteckten Kosten, keine bösen Überraschungen – sondern saubere Arbeit, die Jahrzehnte hält.</p>
+          
+          <div class="about-feature-list">
+            <div class="about-feature">
+              <i data-lucide="check-circle-2"></i>
+              <span><strong>Alles aus einer Hand:</strong> Ein Ansprechpartner für Ihr gesamtes Projekt.</span>
+            </div>
+            <div class="about-feature">
+              <i data-lucide="check-circle-2"></i>
+              <span><strong>Termintreue:</strong> Wir halten uns an vereinbarte Zeitpläne.</span>
+            </div>
+            <div class="about-feature">
+              <i data-lucide="check-circle-2"></i>
+              <span><strong>Qualitätsgarantie:</strong> Ausschließliche Verwendung von Premium-Materialien.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-visual reveal" style="--i:1">
+          <div class="stat-block">
+            <div class="stat-number">1988</div>
+            <div class="stat-label">Gründungsjahr</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Meisterbetrieb</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">Ktn</div>
+            <div class="stat-label">Regional verwurzelt</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotions Section -->
+    <section id="aktionen" class="section aktionen-section">
+      <div class="container">
+        <div class="reveal">
+          <h2>Aktuelle Aktionen</h2>
+          <p>Profitieren Sie von unseren zeitlich begrenzten Angeboten für Premium-Marken.</p>
+        </div>
+
+        <div class="aktionen-grid">
+          <div class="aktion-card reveal" style="--i:0">
+            <span class="aktion-tag">Aktion</span>
+            <h3>Premium Armaturen</h3>
+            <p>Sichern Sie sich jetzt 15% Rabatt auf alle Badarmaturen bei einer Komplettsanierung.</p>
+            <div class="aktion-brand">GROHE</div>
+            <button class="btn btn-outline btn-trigger" style="margin-top: var(--space-6); align-self: flex-start; color: white; border-color: rgba(255,255,255,0.3);" data-modal="promo-modal">
+              Angebot anfragen
+            </button>
+          </div>
+          
+          <div class="aktion-card reveal" style="--i:1">
+            <span class="aktion-tag">Aktion</span>
+            <h3>Fußbodenheizung</h3>
+            <p>Kostenloser hydraulischer Abgleich bei Neuinstallation eines Flächenheizsystems.</p>
+            <div class="aktion-brand">REHAU</div>
+            <button class="btn btn-outline btn-trigger" style="margin-top: var(--space-6); align-self: flex-start; color: white; border-color: rgba(255,255,255,0.3);" data-modal="promo-modal">
+              Angebot anfragen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="section container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h2>Kontaktieren Sie uns</h2>
+          <p>Ihr Installateur-Team von SHM in Klagenfurt steht Ihnen für Beratung und Umsetzung zur Verfügung. Wir freuen uns auf Ihre Anfrage.</p>
+          
+          <div style="margin-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-6);">
+            <div class="contact-item">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <h4>Standort</h4>
+                <p>Musterstraße 12<br>9020 Klagenfurt am Wörthersee</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="phone"></i>
+              <div>
+                <h4>Telefon</h4>
+                <p>+43 463 22744</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="mail"></i>
+              <div>
+                <h4>E-Mail</h4>
+                <p>office@shm-heizungsanitaer.at</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-placeholder reveal" style="--i:1">
+          <i data-lucide="map"></i>
+          <h3>Interaktive Karte</h3>
+          <p>Aus Datenschutzgründen ist die Karte standardmäßig deaktiviert. Klicken Sie auf "Karte laden", um den Inhalt von Herold Maps anzuzeigen.</p>
+          <button class="btn btn-primary btn-trigger" data-modal="map-modal">
+            Karte laden
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>SHM</h3>
+          <p>Ihr Premium-Installateur für Heizung, Sanitär und Lüftung in Klagenfurt am Wörthersee. 35 Jahre Erfahrung, auf die Sie bauen können.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Leistungen</h4>
+          <div class="footer-links">
+            <a href="#leistungen">Heizungsanlagen</a>
+            <a href="#leistungen">Sanitär & Bad</a>
+            <a href="#leistungen">Lüftungstechnik</a>
+            <a href="#aktionen">Aktuelle Aktionen</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <div class="footer-links">
+            <span class="icon-text"><i data-lucide="phone" style="width:16px;"></i> +43 463 22744</span>
+            <span class="icon-text"><i data-lucide="mail" style="width:16px;"></i> office@shm-heizungsanitaer.at</span>
+            <span class="icon-text"><i data-lucide="map-pin" style="width:16px;"></i> 9020 Klagenfurt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SHM GmbH — All original content, images & trademarks are property of their respective owners. Website rebuilt by Benedict Jaros.</p>
+        <div class="footer-links" style="flex-direction: row; gap: var(--space-6);">
+          <button class="btn-trigger" data-modal="legal-modal">Impressum</button>
+          <button class="btn-trigger" data-modal="legal-modal">Datenschutz</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Placeholder Modals -->
+  <div class="modal-overlay" id="placeholder-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Schließen"><i data-lucide="x"></i></button>
+      <h3 id="modal-title" class="modal-title">Funktion in Kürze verfügbar</h3>
+      <p class="modal-body">This feature will be live once the website is launched and configured. Contact us in the meantime — we'd love to hear from you.</p>
+      <button class="btn btn-primary modal-close-btn">Verstanden</button>
+    </div>
+  </div>
+
+  <!-- Legal Demo Modal -->
+  <div class="modal-overlay" id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Schließen"><i data-lucide="x"></i></button>
+      <h3 id="legal-title" class="modal-title">Rechtliche Hinweise</h3>
+      <p class="modal-body">Diese Website ist ein Demo-Remake und wurde nicht von oder für das Unternehmen erstellt. Die Inhalte dienen ausschließlich Demonstrationszwecken. Für unsere eigenen rechtlichen Informationen:</p>
+      <div class="modal-links">
+        <a href="https://benedictjaros.com/impressum" target="_blank">Impressum</a>
+        <a href="https://benedictjaros.com/datenschutz" target="_blank">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie Einwilligung">
+    <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die weitere Nutzung stimmen Sie unserer Datenschutzerklärung zu.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-outline" id="cookieDecline">Ablehnen</button>
+      <button class="btn btn-primary" id="cookieAccept">Akzeptieren</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Icons
+      lucide.createIcons();
+
+      // Mobile Navigation
+      const navToggle = document.getElementById('navToggle');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      let isMenuOpen = false;
+
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        navToggle.setAttribute('aria-expanded', isMenuOpen);
+        if (isMenuOpen) {
+          mobileOverlay.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileOverlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      }
+
+      navToggle.addEventListener('click', toggleMenu);
+      
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isMenuOpen) toggleMenu();
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) toggleMenu();
+      });
+
+      // Scroll Reveal
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealOptions = {
+        threshold: 0.12,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, revealOptions);
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // Modals
+      const placeholderModal = document.getElementById('placeholder-modal');
+      const legalModal = document.getElementById('legal-modal');
+      const modalCloseBtns = document.querySelectorAll('.modal-close, .modal-close-btn');
+      
+      function openModal(modalId, title = null) {
+        let targetModal = modalId === 'legal-modal' ? legalModal : placeholderModal;
+        
+        if (title && targetModal === placeholderModal) {
+          targetModal.querySelector('.modal-title').textContent = title;
+        }
+        
+        targetModal.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModals() {
+        placeholderModal.classList.remove('is-active');
+        legalModal.classList.remove('is-active');
+        if (!isMenuOpen) document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.btn-trigger').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = btn.getAttribute('data-modal');
+          let title = "Funktion in Kürze verfügbar";
+          
+          if (target === 'contact-modal') title = "Kontakt aufnehmen";
+          if (target === 'consult-modal') title = "Kostenlose Erstberatung";
+          if (target === 'service-modal') title = "Leistungsdetails ansehen";
+          if (target === 'promo-modal') title = "Angebot anfragen";
+          if (target === 'map-modal') title = "Interaktive Karte laden";
+          
+          openModal(target, title);
+        });
+      });
+
+      modalCloseBtns.forEach(btn => {
+        btn.addEventListener('click', closeModals);
+      });
+
+      document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeModals();
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModals();
+      });
+
+      // Cookie Banner
+      const cookieBanner = document.getElementById('cookieBanner');
+      const btnAccept = document.getElementById('cookieAccept');
+      const btnDecline = document.getElementById('cookieDecline');
+      
+      if (!localStorage.getItem('cookie_consent')) {
+        setTimeout(() => {
+          cookieBanner.classList.add('is-visible');
+        }, 1000);
+      }
+
+      function handleCookie(choice) {
+        localStorage.setItem('cookie_consent', choice);
+        cookieBanner.classList.remove('is-visible');
+      }
+
+      btnAccept.addEventListener('click', () => handleCookie('accepted'));
+      btnDecline.addEventListener('click', () => handleCookie('declined'));
+    });
+  </script>
+</body>
+</html>
